@@ -186,8 +186,15 @@ header h1 {
 }
 .formulario input[type="text"].nuevo-presupuesto, 
 .formulario input[type="number"].nuevo-presupuesto {
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    .formulario input[type="text"].nuevo-presupuesto, 
+    .formulario input[type="number"].nuevo-presupuesto {
     font-size: 2.8rem;
     text-align: center;
+    }
 }
 
 .contenedor-presupuesto svg {
@@ -241,7 +248,13 @@ main {
 .filtros .campo {
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 2rem;
+}
+@media (min-width: 768px) {
+    .filtros .campo {
+        flex-direction: row;
+    }
 }
 .filtros label {
     font-size: 3rem;
@@ -271,13 +284,18 @@ main {
 
 .gasto {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     gap: 2rem;
     margin-bottom: 2rem;
     width: 100%;
 }
-
+@media (min-width: 768px) {
+    .gasto {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
 .cantidad-gasto {
     font-size: 2.4rem;
     color: var(--negro);
@@ -325,10 +343,15 @@ main {
 
 .nuevo-gasto {
     position: fixed;
-    bottom: 5rem;
+    bottom: 2rem;
     right: 5rem;
 }
-
+@media (min-width: 768px) {
+    .nuevo-gasto {
+        bottom: 5rem;
+        right: 5rem;
+    }
+}
 .nuevo-gasto img {
     width: 5rem;
 }
@@ -346,10 +369,18 @@ main {
 }
 .modal .cerrar-modal {
     position: absolute;
-    right: 3rem;
-    top: 3rem;
+    right: 2rem;
+    bottom: 3.2rem;
     width: 3rem;
     height: 3rem;
+}
+@media (min-width: 768px) {
+    .modal .cerrar-modal {
+        right: 3rem;
+        top: 3rem;
+        width: 3rem;
+        height: 3rem;
+    }
 }
 .cerrar-modal:hover {
     cursor: pointer;
@@ -365,6 +396,12 @@ main {
     transition-duration: 300ms;
     transition-timing-function: ease-in;
     opacity: 0;
+    padding: 2rem;
+}
+@media (min-width: 768px) {
+    .modal .formulario {
+        padding: 0rem;
+    }
 }
 .modal label {
     color: var(--blanco);
@@ -385,7 +422,6 @@ body .modal {
 .modal label {
     text-align: left;
 }
-
 .CircularProgressbar .CircularProgressbar-text {
     font-size: 1rem !important;
 }
